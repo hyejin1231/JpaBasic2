@@ -20,7 +20,7 @@ public class JpaMain {
         try {
 
             Order order = new Order();
-            order.addOrderItem(new OrderItem()); // 양방향 매핑, 연관관계 편의 메서드 
+            order.addOrderItem(new OrderItem()); // 양방향 매핑, 연관관계 편의 메서드
 
             tx.commit();
         } catch (Exception e) {
