@@ -12,7 +12,7 @@ public class Category extends BaseEntity{
     private Long id;
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
@@ -24,4 +24,7 @@ public class Category extends BaseEntity{
                 joinColumns = @JoinColumn(name = "category_id"),
                 inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> items = new ArrayList<>();
+
+    public Category() {
+    }
 }
